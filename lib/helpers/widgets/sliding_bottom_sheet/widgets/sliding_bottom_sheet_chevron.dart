@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:helpers/helpers.dart';
 
 class SlidingBottomSheetChevron extends StatelessWidget {
-  const SlidingBottomSheetChevron({Key? key, this.color = Colors.white})
-      : super(key: key);
+  const SlidingBottomSheetChevron({super.key, this.color = Colors.white});
 
   final Color color;
 

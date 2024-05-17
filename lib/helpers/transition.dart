@@ -7,7 +7,7 @@ import 'package:helpers/helpers.dart';
 
 class OnScrollHideContent extends StatefulWidget {
   const OnScrollHideContent({
-    Key? key,
+    super.key,
     this.onSizeChanged,
     this.onChanged,
     required this.controller,
@@ -18,7 +18,7 @@ class OnScrollHideContent extends StatefulWidget {
     this.offsetToHideButton,
     this.onTop = true,
     this.opacity = false,
-  }) : super(key: key);
+  });
 
   final void Function(double height)? onSizeChanged;
   final void Function(double height)? onChanged;
@@ -158,10 +158,10 @@ class _OnScrollHideContentState extends State<OnScrollHideContent> {
 
 class TimerPeriodicBuilder extends StatefulWidget {
   const TimerPeriodicBuilder({
-    Key? key,
+    super.key,
     this.duration = const Duration(seconds: 1),
     required this.builder,
-  }) : super(key: key);
+  });
 
   final WidgetBuilder builder;
   final Duration duration;
@@ -197,7 +197,7 @@ class BooleanTween<T> extends StatefulWidget {
   ///(controller.forward()),
   ///if it is FALSE it will execute the Tween from end to begin (controller.reverse())
   const BooleanTween({
-    Key? key,
+    super.key,
     required this.animate,
     required this.builder,
     this.child,
@@ -206,7 +206,7 @@ class BooleanTween<T> extends StatefulWidget {
     this.reverseCurve,
     this.reverseDuration,
     required this.tween,
-  }) : super(key: key);
+  });
 
   ///If it is **TRUE**, it will execute the Tween from begin to end.
   ///
@@ -297,12 +297,12 @@ class _BooleanTweenState<T> extends State<BooleanTween<T>>
 class OpacityTransition extends StatefulWidget {
   /// It is a FadeTransition but this will be shown when receiving a Boolean value.
   const OpacityTransition({
-    Key? key,
+    super.key,
     required this.visible,
     required this.child,
     this.duration = const Duration(milliseconds: 200),
     this.curve = Curves.linear,
-  }) : super(key: key);
+  });
 
   /// It is the child that will be affected by the SwipeTransition
   final Widget child;
@@ -345,7 +345,7 @@ class SwipeTransition extends StatelessWidget {
   /// that is, if you performed the effect inside a 100x100 container the child widget
   /// of the SwipeTransition would pop out of the container and be overexposed on top of its other widgets.
   const SwipeTransition({
-    Key? key,
+    super.key,
     this.axis = Axis.vertical,
     this.axisAlignment = -1.0,
     required this.child,
@@ -355,7 +355,7 @@ class SwipeTransition extends StatelessWidget {
     this.reverseCurve,
     this.reverseDuration,
     required this.visible,
-  }) : super(key: key);
+  });
 
   /// [Axis.horizontal] if [sizeFactor] modifies the width, otherwise
   /// [Axis.vertical].
@@ -419,12 +419,12 @@ class SwipeTransition extends StatelessWidget {
 
 class AlignFactor extends StatelessWidget {
   const AlignFactor({
-    Key? key,
+    super.key,
     required this.lerp,
     this.axis = Axis.vertical,
     this.axisAlignment = -1.0,
     required this.child,
-  }) : super(key: key);
+  });
 
   final Axis axis;
   final double axisAlignment;
@@ -452,7 +452,7 @@ class AlignFactor extends StatelessWidget {
 class TranslateTransition extends StatelessWidget {
   /// It is a type of transition very similar to SlideTransition.
   const TranslateTransition({
-    Key? key,
+    super.key,
     this.begin = const Offset(0, 1),
     required this.child,
     this.curve = Curves.ease,
@@ -461,7 +461,7 @@ class TranslateTransition extends StatelessWidget {
     this.textDirection,
     this.transformHitTests = true,
     required this.visible,
-  }) : super(key: key);
+  });
 
   /// If true, it will show the widget in its position.
   /// If false, it will hide the widget.
@@ -526,14 +526,14 @@ class TranslateTransition extends StatelessWidget {
 class TurnTransition extends StatelessWidget {
   /// It is a RotationTransition but this will be animate when receiving a Boolean value.
   const TurnTransition({
-    Key? key,
+    super.key,
     required this.turn,
     required this.child,
     this.begin = 90,
     this.end = -90,
     this.curve = Curves.ease,
     this.duration = const Duration(milliseconds: 200),
-  }) : super(key: key);
+  });
 
   ///BEGIN DEGREES (RANGE IS 0 - 359)
   final double begin;

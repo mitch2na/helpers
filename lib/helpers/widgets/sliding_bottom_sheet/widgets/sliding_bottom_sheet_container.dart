@@ -17,7 +17,7 @@ class SlidingBottomSheetContainer extends StatefulWidget {
   ///);
   /// ```
   const SlidingBottomSheetContainer({
-    Key? key,
+    super.key,
     this.padding = const Margin.all(20.0),
     this.borderRadius = const BorderRadius.vertical(top: Radius.circular(20.0)),
     this.margin = const Margin.vertical(20.0),
@@ -33,7 +33,7 @@ class SlidingBottomSheetContainer extends StatefulWidget {
     this.scrollPhysics,
     this.scrollToBottom = true,
     this.clipper,
-  }) : super(key: key);
+  });
 
   final Curve animatedSizeCurve;
   final Duration animatedSizeDuration;

@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 
 class TopLeftAlign extends StatelessWidget {
   const TopLeftAlign({
-    Key? key,
+    super.key,
     this.widthFactor,
     this.heightFactor,
     this.child,
-  }) : super(key: key);
+  });
 
   /// If non-null, sets its width to the child's width multiplied by this factor.
   ///
@@ -33,11 +33,11 @@ class TopLeftAlign extends StatelessWidget {
 
 class TopCenterAlign extends StatelessWidget {
   const TopCenterAlign({
-    Key? key,
+    super.key,
     this.widthFactor,
     this.heightFactor,
     this.child,
-  }) : super(key: key);
+  });
 
   /// If non-null, sets its width to the child's width multiplied by this factor.
   ///
@@ -64,11 +64,11 @@ class TopCenterAlign extends StatelessWidget {
 
 class TopRightAlign extends StatelessWidget {
   const TopRightAlign({
-    Key? key,
+    super.key,
     this.widthFactor,
     this.heightFactor,
     this.child,
-  }) : super(key: key);
+  });
 
   /// If non-null, sets its width to the child's width multiplied by this factor.
   ///
@@ -95,11 +95,11 @@ class TopRightAlign extends StatelessWidget {
 
 class CenterLeftAlign extends StatelessWidget {
   const CenterLeftAlign({
-    Key? key,
+    super.key,
     this.widthFactor,
     this.heightFactor,
     this.child,
-  }) : super(key: key);
+  });
 
   /// If non-null, sets its width to the child's width multiplied by this factor.
   ///
@@ -126,11 +126,11 @@ class CenterLeftAlign extends StatelessWidget {
 
 class CenterRightAlign extends StatelessWidget {
   const CenterRightAlign({
-    Key? key,
+    super.key,
     this.widthFactor,
     this.heightFactor,
     this.child,
-  }) : super(key: key);
+  });
 
   /// If non-null, sets its width to the child's width multiplied by this factor.
   ///
@@ -157,11 +157,11 @@ class CenterRightAlign extends StatelessWidget {
 
 class BottomLeftAlign extends StatelessWidget {
   const BottomLeftAlign({
-    Key? key,
+    super.key,
     this.widthFactor,
     this.heightFactor,
     this.child,
-  }) : super(key: key);
+  });
 
   /// If non-null, sets its width to the child's width multiplied by this factor.
   ///
@@ -188,11 +188,11 @@ class BottomLeftAlign extends StatelessWidget {
 
 class BottomCenterAlign extends StatelessWidget {
   const BottomCenterAlign({
-    Key? key,
+    super.key,
     this.widthFactor,
     this.heightFactor,
     this.child,
-  }) : super(key: key);
+  });
 
   /// If non-null, sets its width to the child's width multiplied by this factor.
   ///
@@ -219,11 +219,11 @@ class BottomCenterAlign extends StatelessWidget {
 
 class BottomRightAlign extends StatelessWidget {
   const BottomRightAlign({
-    Key? key,
+    super.key,
     this.widthFactor,
     this.heightFactor,
     this.child,
-  }) : super(key: key);
+  });
 
   /// If non-null, sets its width to the child's width multiplied by this factor.
   ///

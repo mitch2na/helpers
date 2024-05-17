@@ -5,7 +5,7 @@ import 'package:helpers/helpers.dart';
 
 class ScrollableTable<T> extends StatefulWidget {
   const ScrollableTable({
-    Key? key,
+    super.key,
     this.scrollViewWrapper,
     this.tableWrapper,
     this.cellPadding,
@@ -40,7 +40,7 @@ class ScrollableTable<T> extends StatefulWidget {
     this.isEmptyBackground,
     this.tablePadding,
     this.verticalController,
-  }) : super(key: key);
+  });
 
   final Widget Function(Widget child)? scrollViewWrapper;
   final Widget Function(Widget child)? tableWrapper;
@@ -281,7 +281,7 @@ class _ScrollableTableState<T> extends State<ScrollableTable<T>> {
     final BuildMedia media = context.media;
     final double height = media.height;
 
-    Widget _sliverRows({required int? itemCount}) {
+    Widget sliverRows({required int? itemCount}) {
       final Decoration decoration = BoxDecoration(
         border: hasBorder
             ? Border(
@@ -314,11 +314,11 @@ class _ScrollableTableState<T> extends State<ScrollableTable<T>> {
     Widget rows = widget.rowsListenable != null
         ? ValueListenableBuilder<List<T>>(
             valueListenable: widget.rowsListenable!,
-            builder: (_, value, ___) => _sliverRows(
+            builder: (_, value, ___) => sliverRows(
               itemCount: value.length,
             ),
           )
-        : _sliverRows(itemCount: widget.itemCount);
+        : sliverRows(itemCount: widget.itemCount);
 
     if (widget.isLoading != null) {
       rows = ValueListenableBuilder<bool>(

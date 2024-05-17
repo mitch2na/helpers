@@ -8,10 +8,9 @@ enum _SlidingBottomSheetFocusType { sliver, panel }
 
 class _SlidingBottomSheetInheritedWidget extends InheritedWidget {
   const _SlidingBottomSheetInheritedWidget({
-    Key? key,
     required this.controller,
-    required Widget child,
-  }) : super(key: key, child: child);
+    required super.child,
+  });
 
   final SlidingBottomSheetController controller;
 
@@ -70,7 +69,7 @@ class SlidingBottomSheet extends StatefulWidget {
   ///);
   ///```
   SlidingBottomSheet({
-    Key? key,
+    super.key,
     required this.builder,
     this.controller,
     this.isDraggable = true,
@@ -89,8 +88,7 @@ class SlidingBottomSheet extends StatefulWidget {
     this.resizeToAvoidBottomInset,
     this.scrollController,
     this.onSizeChanged,
-  })  : backgroundColor = backgroundColor ?? Colors.black.withOpacity(0.2),
-        super(key: key);
+  })  : backgroundColor = backgroundColor ?? Colors.black.withOpacity(0.2);
 
   ///Provides a [ScrollController] to attach to a scrollable
   ///object in the panel that links the panel position with the scroll position.

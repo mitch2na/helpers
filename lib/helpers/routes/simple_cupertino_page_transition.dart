@@ -27,7 +27,7 @@ class SimpleCupertinoPageTransition extends StatefulWidget {
   ///  * `linearTransition` is whether to perform the transitions linearly.
   ///    Used to precisely track back gesture drags.
   SimpleCupertinoPageTransition({
-    Key? key,
+    super.key,
     required Animation<double> primaryRouteAnimation,
     required Animation<double> secondaryRouteAnimation,
     required this.child,
@@ -59,8 +59,7 @@ class SimpleCupertinoPageTransition extends StatefulWidget {
                 parent: primaryRouteAnimation,
                 curve: routeCurve,
               ).drive(decoration)
-            : null,
-        super(key: key);
+            : null;
 
   /// The widget below this widget in the tree.
   final Widget child;

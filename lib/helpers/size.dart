@@ -6,7 +6,7 @@ class Margin extends EdgeInsets {
   ///```dart
   ///EdgeInsets.all(amount)
   ///```
-  const Margin.all(double value) : super.all(value);
+  const Margin.all(super.value) : super.all();
 
   ///Do that:
   ///```dart
@@ -48,11 +48,11 @@ class Margin extends EdgeInsets {
   ///)
   ///```
   const Margin.only({
-    double left = 0.0,
-    double top = 0.0,
-    double right = 0.0,
-    double bottom = 0.0,
-  }) : super.only(left: left, top: top, right: right, bottom: bottom);
+    super.left,
+    super.top,
+    super.right,
+    super.bottom,
+  }) : super.only();
 
   ///Do that:
   ///```dart
@@ -69,9 +69,9 @@ class Margin extends EdgeInsets {
   ///vertical: vertical);
   ///```
   const Margin.symmetric({
-    double horizontal = 0.0,
-    double vertical = 0.0,
-  }) : super.symmetric(horizontal: horizontal, vertical: vertical);
+    super.horizontal,
+    super.vertical,
+  }) : super.symmetric();
 
   ///Do that:
   ///```dart

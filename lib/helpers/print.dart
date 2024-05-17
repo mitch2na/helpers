@@ -38,7 +38,7 @@ class _AnsiColor {
         16;
   }
 
-  String message(Object? msg) => '${this}$msg$ansiDefault';
+  String message(Object? msg) => '$this$msg$ansiDefault';
 }
 
 void printColor(Object? object, PrintColorStyle style) {

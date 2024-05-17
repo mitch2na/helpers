@@ -22,7 +22,7 @@ class DoubleColumn extends StatelessWidget {
   /// ]);
   ///```
   const DoubleColumn({
-    Key? key,
+    super.key,
     this.columnCrossAxisAlignment = CrossAxisAlignment.center,
     this.columnMainAxisAlignment = MainAxisAlignment.start,
     this.columnSize = MainAxisSize.min,
@@ -34,7 +34,7 @@ class DoubleColumn extends StatelessWidget {
     this.rowMainAxisAlignment = MainAxisAlignment.start,
     this.rowSize = MainAxisSize.max,
     this.spaceBeetween = 20,
-  }) : super(key: key);
+  });
 
   final CrossAxisAlignment columnCrossAxisAlignment;
   final MainAxisAlignment columnMainAxisAlignment;
@@ -82,8 +82,7 @@ class RemoveGlowScrollBehavior extends ScrollBehavior {
   const RemoveGlowScrollBehavior();
 
   @override
-  Widget buildViewportChrome(
-      BuildContext context, Widget child, AxisDirection axisDirection) {
+  Widget buildOverscrollIndicator(BuildContext context, Widget child, ScrollableDetails details) {
     return child;
   }
 }
@@ -91,7 +90,7 @@ class RemoveGlowScrollBehavior extends ScrollBehavior {
 class RemoveScrollGlow extends StatelessWidget {
   ///Eliminate the Splash Effect or Glow Effect when reaching
   ///the limit of a PageView, ScrollView, ListView, etc.
-  const RemoveScrollGlow({Key? key, required this.child}) : super(key: key);
+  const RemoveScrollGlow({super.key, required this.child});
 
   final Widget child;
 
@@ -125,7 +124,7 @@ class SizeBuilder extends StatefulWidget {
   ///   return widget.builder(constraints.maxWidth, constraints.maxHeight);
   ///});
   ///```
-  const SizeBuilder({Key? key, this.builder}) : super(key: key);
+  const SizeBuilder({super.key, this.builder});
 
   ///Argument `(double width, double height)`
   final Widget Function(double width, double height)? builder;
@@ -150,7 +149,7 @@ class ExpandedSpacer extends StatelessWidget {
   ///```dart
   ///return Expanded(child: SizedBox())
   ///```
-  const ExpandedSpacer({Key? key}) : super(key: key);
+  const ExpandedSpacer({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -167,7 +166,7 @@ class ExpandedTap extends StatelessWidget {
   ///   ),
   ///);
   ///```
-  const ExpandedTap({Key? key, this.onTap, this.child}) : super(key: key);
+  const ExpandedTap({super.key, this.onTap, this.child});
 
   final void Function()? onTap;
   final Widget? child;
@@ -190,10 +189,10 @@ class ExpandedAlign extends StatelessWidget {
   ///);
   ///```
   const ExpandedAlign({
-    Key? key,
+    super.key,
     this.alignment = Alignment.centerRight,
     this.child,
-  }) : super(key: key);
+  });
 
   final Alignment alignment;
   final Widget? child;
@@ -219,12 +218,11 @@ class SafeAreaColor extends StatelessWidget {
   ///  );
   /// ```
   const SafeAreaColor(
-      {Key? key,
+      {super.key,
       this.child,
       this.color = Colors.white,
       this.height,
-      this.width = double.infinity})
-      : super(key: key);
+      this.width = double.infinity});
 
   final Widget? child;
   final Color color;
@@ -258,10 +256,10 @@ class OpaqueTap extends StatelessWidget {
   ///);
   ///```
   const OpaqueTap({
-    Key? key,
+    super.key,
     required this.onTap,
     required this.child,
-  }) : super(key: key);
+  });
 
   final void Function() onTap;
   final Widget child;
@@ -278,12 +276,12 @@ class OpaqueTap extends StatelessWidget {
 
 class SplashTap extends StatelessWidget {
   const SplashTap({
-    Key? key,
+    super.key,
     required this.onTap,
     required this.child,
     this.color,
     this.shape = BoxShape.rectangle,
-  }) : super(key: key);
+  });
 
   ///Creates an ink well.
   final void Function()? onTap;
@@ -310,7 +308,7 @@ class SplashTap extends StatelessWidget {
 
 class SplashButton extends StatelessWidget {
   const SplashButton({
-    Key? key,
+    super.key,
     required this.onTap,
     required this.child,
     this.color = Colors.blue,
@@ -320,8 +318,7 @@ class SplashButton extends StatelessWidget {
     this.shape = BoxShape.rectangle,
   })  : padding = padding ?? const EdgeInsets.all(20.0),
         borderRadius =
-            borderRadius ?? const BorderRadius.all(Radius.circular(20.0)),
-        super(key: key);
+            borderRadius ?? const BorderRadius.all(Radius.circular(20.0));
 
   ///Creates an ink well.
   final void Function() onTap;
@@ -381,7 +378,7 @@ class SplashButton extends StatelessWidget {
 
 class TileDesigned extends StatelessWidget {
   const TileDesigned({
-    Key? key,
+    super.key,
     this.onTap,
     this.prefix,
     this.child,
@@ -389,7 +386,7 @@ class TileDesigned extends StatelessWidget {
     this.background = Colors.transparent,
     this.padding = const EdgeInsets.all(20.0),
     this.borderRadius = const BorderRadius.all(Radius.circular(20.0)),
-  }) : super(key: key);
+  });
 
   ///Creates an ink well.
   final void Function()? onTap;

@@ -3,10 +3,10 @@ import 'package:helpers/helpers.dart';
 
 class KeyboardVisibilityBuilder extends StatefulWidget {
   const KeyboardVisibilityBuilder({
-    Key? key,
+    super.key,
     this.child,
     required this.builder,
-  }) : super(key: key);
+  });
 
   final Widget Function(
     BuildContext context,
@@ -61,10 +61,10 @@ class _KeyboardVisibilityBuilderState extends State<KeyboardVisibilityBuilder>
 class DismissKeyboard extends StatelessWidget {
   ///Tapping on a Widget will apply the FocusScope to it and hide the keyboard.
   const DismissKeyboard({
-    Key? key,
+    super.key,
     this.child,
     this.behavior = HitTestBehavior.opaque,
-  }) : super(key: key);
+  });
 
   final HitTestBehavior behavior;
   final Widget? child;

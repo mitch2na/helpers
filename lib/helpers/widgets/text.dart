@@ -8,7 +8,7 @@ class Headline1 extends StatelessWidget {
   ///```
   const Headline1(
     this.text, {
-    Key? key,
+    super.key,
     this.style,
     this.textAlign,
     this.textSpan,
@@ -21,7 +21,7 @@ class Headline1 extends StatelessWidget {
     this.maxLines,
     this.semanticsLabel,
     this.textWidthBasis,
-  }) : super(key: key);
+  });
 
   ///The text to display.
   final String text;
@@ -127,7 +127,7 @@ class Headline1 extends StatelessWidget {
         strutStyle: strutStyle,
         textWidthBasis: textWidthBasis,
         semanticsLabel: semanticsLabel,
-        style: context.textTheme.headline1!.merge(style));
+        style: context.textTheme.displayLarge!.merge(style));
   }
 }
 
@@ -137,7 +137,7 @@ class Headline2 extends StatelessWidget {
   ///return Text(text, style: context.textTheme.headline2);
   ///```
   const Headline2(this.text,
-      {Key? key,
+      {super.key,
       this.style,
       this.textAlign,
       this.textSpan,
@@ -149,8 +149,7 @@ class Headline2 extends StatelessWidget {
       this.textScaleFactor,
       this.maxLines,
       this.semanticsLabel,
-      this.textWidthBasis})
-      : super(key: key);
+      this.textWidthBasis});
 
   ///The text to display.
   final String text;
@@ -255,7 +254,7 @@ class Headline2 extends StatelessWidget {
         strutStyle: strutStyle,
         textWidthBasis: textWidthBasis,
         semanticsLabel: semanticsLabel,
-        style: context.textTheme.headline2!.merge(style));
+        style: context.textTheme.displayMedium!.merge(style));
   }
 }
 
@@ -265,7 +264,7 @@ class Headline3 extends StatelessWidget {
   ///return Text(text, style: context.textTheme.headline3);
   ///```
   const Headline3(this.text,
-      {Key? key,
+      {super.key,
       this.style,
       this.textAlign,
       this.textSpan,
@@ -277,8 +276,7 @@ class Headline3 extends StatelessWidget {
       this.textScaleFactor,
       this.maxLines,
       this.semanticsLabel,
-      this.textWidthBasis})
-      : super(key: key);
+      this.textWidthBasis});
 
   ///The text to display.
   final String text;
@@ -383,7 +381,7 @@ class Headline3 extends StatelessWidget {
         strutStyle: strutStyle,
         textWidthBasis: textWidthBasis,
         semanticsLabel: semanticsLabel,
-        style: context.textTheme.headline3!.merge(style));
+        style: context.textTheme.displaySmall!.merge(style));
   }
 }
 
@@ -393,7 +391,7 @@ class Headline4 extends StatelessWidget {
   ///return Text(text, style: context.textTheme.headline4);
   ///```
   const Headline4(this.text,
-      {Key? key,
+      {super.key,
       this.style,
       this.textAlign,
       this.textSpan,
@@ -405,8 +403,7 @@ class Headline4 extends StatelessWidget {
       this.textScaleFactor,
       this.maxLines,
       this.semanticsLabel,
-      this.textWidthBasis})
-      : super(key: key);
+      this.textWidthBasis});
 
   ///The text to display.
   final String text;
@@ -511,7 +508,7 @@ class Headline4 extends StatelessWidget {
         strutStyle: strutStyle,
         textWidthBasis: textWidthBasis,
         semanticsLabel: semanticsLabel,
-        style: context.textTheme.headline4!.merge(style));
+        style: context.textTheme.headlineMedium!.merge(style));
   }
 }
 
@@ -521,7 +518,7 @@ class Headline5 extends StatelessWidget {
   ///return Text(text, style: context.textTheme.headline5);
   ///```
   const Headline5(this.text,
-      {Key? key,
+      {super.key,
       this.style,
       this.textAlign,
       this.textSpan,
@@ -533,8 +530,7 @@ class Headline5 extends StatelessWidget {
       this.textScaleFactor,
       this.maxLines,
       this.semanticsLabel,
-      this.textWidthBasis})
-      : super(key: key);
+      this.textWidthBasis});
 
   ///The text to display.
   final String text;
@@ -639,7 +635,7 @@ class Headline5 extends StatelessWidget {
         strutStyle: strutStyle,
         textWidthBasis: textWidthBasis,
         semanticsLabel: semanticsLabel,
-        style: context.textTheme.headline5!.merge(style));
+        style: context.textTheme.headlineSmall!.merge(style));
   }
 }
 
@@ -649,7 +645,7 @@ class Headline6 extends StatelessWidget {
   ///return Text(text, style: context.textTheme.headline6);
   ///```
   const Headline6(this.text,
-      {Key? key,
+      {super.key,
       this.style,
       this.textAlign,
       this.textSpan,
@@ -661,8 +657,7 @@ class Headline6 extends StatelessWidget {
       this.textScaleFactor,
       this.maxLines,
       this.semanticsLabel,
-      this.textWidthBasis})
-      : super(key: key);
+      this.textWidthBasis});
 
   ///The text to display.
   final String text;
@@ -767,7 +762,7 @@ class Headline6 extends StatelessWidget {
         strutStyle: strutStyle,
         textWidthBasis: textWidthBasis,
         semanticsLabel: semanticsLabel,
-        style: context.textTheme.headline6!.merge(style));
+        style: context.textTheme.titleLarge!.merge(style));
   }
 }
 
@@ -777,7 +772,7 @@ class Subtitle1 extends StatelessWidget {
   ///return Text(text, style: context.textTheme.subtitle1);
   ///```
   const Subtitle1(this.text,
-      {Key? key,
+      {super.key,
       this.style,
       this.textAlign,
       this.textSpan,
@@ -789,8 +784,7 @@ class Subtitle1 extends StatelessWidget {
       this.textScaleFactor,
       this.maxLines,
       this.semanticsLabel,
-      this.textWidthBasis})
-      : super(key: key);
+      this.textWidthBasis});
 
   ///The text to display.
   final String text;
@@ -895,7 +889,7 @@ class Subtitle1 extends StatelessWidget {
         strutStyle: strutStyle,
         textWidthBasis: textWidthBasis,
         semanticsLabel: semanticsLabel,
-        style: context.textTheme.subtitle1!.merge(style));
+        style: context.textTheme.titleMedium!.merge(style));
   }
 }
 
@@ -905,7 +899,7 @@ class Subtitle2 extends StatelessWidget {
   ///return Text(text, style: context.textTheme.subtitle2);
   ///```
   const Subtitle2(this.text,
-      {Key? key,
+      {super.key,
       this.style,
       this.textAlign,
       this.textSpan,
@@ -917,8 +911,7 @@ class Subtitle2 extends StatelessWidget {
       this.textScaleFactor,
       this.maxLines,
       this.semanticsLabel,
-      this.textWidthBasis})
-      : super(key: key);
+      this.textWidthBasis});
 
   ///The text to display.
   final String text;
@@ -1023,7 +1016,7 @@ class Subtitle2 extends StatelessWidget {
         strutStyle: strutStyle,
         textWidthBasis: textWidthBasis,
         semanticsLabel: semanticsLabel,
-        style: context.textTheme.subtitle2!.merge(style));
+        style: context.textTheme.titleSmall!.merge(style));
   }
 }
 
@@ -1033,7 +1026,7 @@ class BodyText1 extends StatelessWidget {
   ///return Text(text, style: context.textTheme.bodyText1);
   ///```
   const BodyText1(this.text,
-      {Key? key,
+      {super.key,
       this.style,
       this.textAlign,
       this.textSpan,
@@ -1045,8 +1038,7 @@ class BodyText1 extends StatelessWidget {
       this.textScaleFactor,
       this.maxLines,
       this.semanticsLabel,
-      this.textWidthBasis})
-      : super(key: key);
+      this.textWidthBasis});
 
   ///The text to display.
   final String text;
@@ -1151,7 +1143,7 @@ class BodyText1 extends StatelessWidget {
         strutStyle: strutStyle,
         textWidthBasis: textWidthBasis,
         semanticsLabel: semanticsLabel,
-        style: context.textTheme.bodyText1!.merge(style));
+        style: context.textTheme.bodyLarge!.merge(style));
   }
 }
 
@@ -1161,7 +1153,7 @@ class BodyText2 extends StatelessWidget {
   ///return Text(text, style: context.textTheme.bodyText2);
   ///```
   const BodyText2(this.text,
-      {Key? key,
+      {super.key,
       this.style,
       this.textAlign,
       this.textSpan,
@@ -1173,8 +1165,7 @@ class BodyText2 extends StatelessWidget {
       this.textScaleFactor,
       this.maxLines,
       this.semanticsLabel,
-      this.textWidthBasis})
-      : super(key: key);
+      this.textWidthBasis});
 
   ///The text to display.
   final String text;
@@ -1279,7 +1270,7 @@ class BodyText2 extends StatelessWidget {
         strutStyle: strutStyle,
         textWidthBasis: textWidthBasis,
         semanticsLabel: semanticsLabel,
-        style: context.textTheme.bodyText2!.merge(style));
+        style: context.textTheme.bodyMedium!.merge(style));
   }
 }
 
@@ -1289,7 +1280,7 @@ class CaptionText extends StatelessWidget {
   ///return Text(text, style: context.textTheme.caption);
   ///```
   const CaptionText(this.text,
-      {Key? key,
+      {super.key,
       this.style,
       this.textAlign,
       this.textSpan,
@@ -1301,8 +1292,7 @@ class CaptionText extends StatelessWidget {
       this.textScaleFactor,
       this.maxLines,
       this.semanticsLabel,
-      this.textWidthBasis})
-      : super(key: key);
+      this.textWidthBasis});
 
   ///The text to display.
   final String text;
@@ -1407,7 +1397,7 @@ class CaptionText extends StatelessWidget {
         strutStyle: strutStyle,
         textWidthBasis: textWidthBasis,
         semanticsLabel: semanticsLabel,
-        style: context.textTheme.caption!.merge(style));
+        style: context.textTheme.bodySmall!.merge(style));
   }
 }
 
@@ -1417,7 +1407,7 @@ class ButtonText extends StatelessWidget {
   ///return Text(text, style: context.textTheme.button);
   ///```
   const ButtonText(this.text,
-      {Key? key,
+      {super.key,
       this.style,
       this.textAlign,
       this.textSpan,
@@ -1429,8 +1419,7 @@ class ButtonText extends StatelessWidget {
       this.textScaleFactor,
       this.maxLines,
       this.semanticsLabel,
-      this.textWidthBasis})
-      : super(key: key);
+      this.textWidthBasis});
 
   ///The text to display.
   final String text;
@@ -1535,7 +1524,7 @@ class ButtonText extends StatelessWidget {
         strutStyle: strutStyle,
         textWidthBasis: textWidthBasis,
         semanticsLabel: semanticsLabel,
-        style: context.textTheme.button!.merge(style));
+        style: context.textTheme.labelLarge!.merge(style));
   }
 }
 
@@ -1546,7 +1535,7 @@ class OverlineText extends StatelessWidget {
   ///```
   const OverlineText(
     this.text, {
-    Key? key,
+    super.key,
     this.style,
     this.textAlign,
     this.textSpan,
@@ -1559,7 +1548,7 @@ class OverlineText extends StatelessWidget {
     this.maxLines,
     this.semanticsLabel,
     this.textWidthBasis,
-  }) : super(key: key);
+  });
 
   ///The text to display.
   final String text;
@@ -1665,7 +1654,7 @@ class OverlineText extends StatelessWidget {
       strutStyle: strutStyle,
       textWidthBasis: textWidthBasis,
       semanticsLabel: semanticsLabel,
-      style: context.textTheme.overline!.merge(style),
+      style: context.textTheme.labelSmall!.merge(style),
     );
   }
 }

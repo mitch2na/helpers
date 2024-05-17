@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class CarouselParallax extends StatelessWidget {
   const CarouselParallax({
-    Key? key,
+    super.key,
     required this.child,
     this.curve = Curves.ease,
     required this.height,
@@ -10,7 +10,7 @@ class CarouselParallax extends StatelessWidget {
     this.minScale = 0.64,
     required this.page,
     this.parallaxEffect = false,
-  }) : super(key: key);
+  });
 
   final Widget child;
   final Curve curve;

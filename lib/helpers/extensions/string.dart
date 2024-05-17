@@ -67,7 +67,7 @@ extension StringHelperExtension on String {
     asterisks.forEach((_) => censor.write("*"));
 
     if (count >= begin + end) {
-      return "${substring(0, begin)}${censor.toString()}${substring(count - end, count)}";
+      return "${substring(0, begin)}$censor${substring(count - end, count)}";
     }
     return this;
   }

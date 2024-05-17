@@ -103,7 +103,7 @@ class CarouselController {
 
 class Carousel extends StatefulWidget {
   Carousel({
-    Key? key,
+    super.key,
     required this.itemBuilder,
     required this.itemCount,
     CarouselController? controller,
@@ -123,8 +123,7 @@ class Carousel extends StatefulWidget {
     this.clipBehavior = Clip.none,
     this.scrollBehavior,
     this.initialPage = 0,
-  })  : controller = controller ?? CarouselController(),
-        super(key: key);
+  })  : controller = controller ?? CarouselController();
 
   final Widget Function(BuildContext context, int index) itemBuilder;
 

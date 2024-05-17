@@ -1,4 +1,3 @@
-library helpers;
 
 export 'package:helpers/helpers/curves.dart';
 export 'package:helpers/helpers/decorations.dart';

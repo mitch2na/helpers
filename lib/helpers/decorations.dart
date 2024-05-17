@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 
 class NoneInputDecoration extends InputDecoration {
-  const NoneInputDecoration({String? hintText, TextStyle? hintStyle})
+  const NoneInputDecoration({super.hintText, super.hintStyle})
       : super(
-          hintText: hintText,
-          hintStyle: hintStyle,
           border: InputBorder.none,
           errorBorder: InputBorder.none,
           focusedBorder: InputBorder.none,

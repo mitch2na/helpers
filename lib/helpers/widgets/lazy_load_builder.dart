@@ -9,13 +9,13 @@ typedef LazyLoadWidgetBuilder = Widget Function(
 
 class LazyLoadBuilder extends StatefulWidget {
   const LazyLoadBuilder({
-    Key? key,
+    super.key,
     this.onLoad,
     required this.builder,
     required this.controller,
     this.startLoadBeforeOffset = -80,
     this.status,
-  }) : super(key: key);
+  });
 
   final Future<LazyLoadStatus?> Function()? onLoad;
   final LazyLoadWidgetBuilder builder;

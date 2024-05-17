@@ -3,12 +3,12 @@ import 'package:helpers/helpers.dart';
 
 class CarouselContainer extends StatelessWidget {
   const CarouselContainer({
-    Key? key,
+    super.key,
     required this.carousel,
     this.aspectRatio,
     this.height,
     this.padding,
-  }) : super(key: key);
+  });
 
   final Widget Function(double viewportFraction) carousel;
   final double? aspectRatio;

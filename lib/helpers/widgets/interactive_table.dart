@@ -3,13 +3,13 @@ import 'package:vector_math/vector_math_64.dart' show Quad;
 
 class InteractiveTable extends StatefulWidget {
   const InteractiveTable({
-    Key? key,
+    super.key,
     required this.itemBuilder,
     required this.cellHeight,
     required this.cellWidth,
     required this.columnsCount,
     required this.rowsCount,
-  }) : super(key: key);
+  });
 
   final Widget Function(int row, int column) itemBuilder;
   final double cellHeight;
@@ -85,10 +85,9 @@ class _InteractiveTableState extends State<InteractiveTable> {
 
 class _TableInheritedWidget extends InheritedWidget {
   const _TableInheritedWidget({
-    Key? key,
     required this.state,
-    required Widget child,
-  }) : super(key: key, child: child);
+    required super.child,
+  });
 
   final _InteractiveTableState state;
 
@@ -104,7 +103,7 @@ class _TableInheritedWidget extends InheritedWidget {
 }
 
 class _Table extends StatelessWidget {
-  const _Table({Key? key}) : super(key: key);
+  const _Table();
 
   @override
   Widget build(BuildContext context) {

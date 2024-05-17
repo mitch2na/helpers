@@ -48,9 +48,8 @@ class Misc {
   ///adipiscing elit, sed do eiusmod tempor incididunt
   ///ut labore et dolore magna aliqua."
   ///```
-  static const String loremIpsum =
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, " +
-          "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+  static const String loremIpsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, " +
+      "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
 
   static BigInt maxInt = BigInt.parse("9223372036854775807");
 
@@ -65,8 +64,7 @@ class Misc {
 
   static bool isPhoneNumber(String text) {
     if (text.length > 16 || text.length < 9) return false;
-    return RegExp(r'^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$')
-        .hasMatch(text);
+    return RegExp(r'^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$').hasMatch(text);
   }
 
   static RegExp beetweenCharacterPattern([String character = "*"]) {
@@ -112,24 +110,23 @@ class Misc {
   }
 
   static Future<Uint8List> widgetToImageBytes({
+    required BuildContext context,
     required Widget child,
     Size? size,
     double? pixelRatio,
     ui.ImageByteFormat format = ui.ImageByteFormat.png,
     Duration delay = Duration.zero,
-    BuildContext? context,
   }) async {
     final RenderRepaintBoundary repaintBoundary = RenderRepaintBoundary();
     final PipelineOwner pipelineOwner = PipelineOwner();
-    final Size logicalSize =
-        size ?? ui.window.physicalSize / ui.window.devicePixelRatio;
+    final Size logicalSize = size ?? View.of(context).physicalSize / View.of(context).devicePixelRatio;
     final RenderView renderView = RenderView(
       child: RenderPositionedBox(child: repaintBoundary),
       configuration: ViewConfiguration(
-        size: logicalSize,
+        logicalConstraints: BoxConstraints(maxWidth: logicalSize.width,maxHeight: logicalSize.height),
         devicePixelRatio: pixelRatio ?? 1.0,
       ),
-      view: ui.window,
+      view: View.of(context),
     );
 
     int retryCounter = 3;
@@ -145,18 +142,16 @@ class Misc {
       container: repaintBoundary,
       child: Directionality(
         textDirection: TextDirection.ltr,
-        child: context != null
-            ? InheritedTheme.captureAll(
-                context,
-                MediaQuery(data: MediaQuery.of(context), child: child),
-              )
-            : child,
+        child: InheritedTheme.captureAll(
+          context,
+          MediaQuery(data: MediaQuery.of(context), child: child),
+        ),
       ),
     ).attachToRenderTree(buildOwner);
 
     pipelineOwner.rootNode = renderView;
     renderView.prepareInitialFrame();
-
+    final physicalSizeWidth = View.of(context).physicalSize.width;
     void buildScope() {
       buildOwner
         ..buildScope(rootElement)
@@ -171,9 +166,9 @@ class Misc {
 
     do {
       isDirty = false;
+
       image = await repaintBoundary.toImage(
-        pixelRatio:
-        pixelRatio ?? (ui.window.physicalSize.width / logicalSize.width),
+        pixelRatio: pixelRatio ?? (physicalSizeWidth / logicalSize.width),
       );
       await Future.delayed(delay);
       if (isDirty) buildScope();
@@ -183,15 +178,13 @@ class Misc {
     return byteData!.buffer.asUint8List();
   }
 
-  static bool isUsername(String text) =>
-      RegExp(r'^[a-zA-Z0-9][a-zA-Z0-9_.]+[a-zA-Z0-9]$').hasMatch(text);
+  static bool isUsername(String text) => RegExp(r'^[a-zA-Z0-9][a-zA-Z0-9_.]+[a-zA-Z0-9]$').hasMatch(text);
 
   static bool isUrl(String text) => RegExp(
           r"^((((H|h)(T|t)|(F|f))(T|t)(P|p)((S|s)?))\://)?(www.|[a-zA-Z0-9].)[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,6}(\:[0-9]{1,5})*(/($|[a-zA-Z0-9\.\,\;\?\'\\\+&amp;%\$#\=~_\-]+))*$")
       .hasMatch(text);
 
-  static bool isBase64(String text) =>
-      RegExp(r"^[-A-Za-z0-9+=]{1,50}|=[^=]|={3,}$").hasMatch(text);
+  static bool isBase64(String text) => RegExp(r"^[-A-Za-z0-9+=]{1,50}|=[^=]|={3,}$").hasMatch(text);
 
   static double pow(double x, int exponent) {
     return math.pow(x, exponent).toDouble();
@@ -294,11 +287,9 @@ class Misc {
     return [];
   }
 
-  static bool listEquals<T>(List<T>? a, List<T>? b) =>
-      foundation.listEquals(a, b);
+  static bool listEquals<T>(List<T>? a, List<T>? b) => foundation.listEquals(a, b);
 
-  static bool mapEquals<T, U>(Map<T, U>? a, Map<T, U>? b) =>
-      foundation.mapEquals(a, b);
+  static bool mapEquals<T, U>(Map<T, U>? a, Map<T, U>? b) => foundation.mapEquals(a, b);
 
   static bool hasMapDifference<K, V>(
     Map<K, V> initialMap,
@@ -363,8 +354,7 @@ class Misc {
     printAmber("Completed in ${ms / 1000} seconds", prefix: _prefix ?? "");
   }
 
-  Duration get elapsed =>
-      DateTime.now().toUtc().difference(_init ?? DateTime.now().toUtc());
+  Duration get elapsed => DateTime.now().toUtc().difference(_init ?? DateTime.now().toUtc());
 
   static double lerpDouble(num a, num b, double t) {
     return ui.lerpDouble(a, b, t)!;
@@ -461,8 +451,7 @@ class Misc {
   ///```dart
   ///await SystemChrome.setPreferredOrientations(orientations)
   ///```
-  static Future<void> setSystemOrientation(
-      List<DeviceOrientation> orientations) async {
+  static Future<void> setSystemOrientation(List<DeviceOrientation> orientations) async {
     await SystemChrome.setPreferredOrientations(orientations);
   }
 
@@ -526,23 +515,17 @@ abstract class SystemOrientation {
   ///```dart
   ///return [DeviceOrientation.landscapeLeft]
   ///```
-  static List<DeviceOrientation> landscapeLeft = [
-    DeviceOrientation.landscapeLeft
-  ];
+  static List<DeviceOrientation> landscapeLeft = [DeviceOrientation.landscapeLeft];
 
   ///```dart
   ///return [DeviceOrientation.landscapeRight]
   ///```
-  static List<DeviceOrientation> landscapeRight = [
-    DeviceOrientation.landscapeRight
-  ];
+  static List<DeviceOrientation> landscapeRight = [DeviceOrientation.landscapeRight];
 
   ///```dart
   ///return [DeviceOrientation.portraitDown]
   ///```
-  static List<DeviceOrientation> portraitDown = [
-    DeviceOrientation.portraitDown
-  ];
+  static List<DeviceOrientation> portraitDown = [DeviceOrientation.portraitDown];
 
   ///```dart
   ///return [DeviceOrientation.portraitUp]

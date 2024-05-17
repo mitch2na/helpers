@@ -18,11 +18,11 @@ const int _kMaxPageBackAnimationTime = 300; // Milliseconds.
 
 class SimpleCupertinoBackGestureDetector<T> extends StatefulWidget {
   const SimpleCupertinoBackGestureDetector({
-    Key? key,
+    super.key,
     required this.route,
     required this.child,
     this.fractionalGesture = 0.1,
-  }) : super(key: key);
+  });
 
   final Widget child;
   final PageRoute<T> route;
